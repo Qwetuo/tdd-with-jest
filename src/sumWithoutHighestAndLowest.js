@@ -5,7 +5,11 @@
 // e.g. sumWithoutHighestAndLowest([1, 1, 11, 2, 3]) => 5
 
 const sumWithoutHighestAndLowest = array => {
-	// your code here
+	const maxNum = Math.max(...array);
+	const minNum = Math.min(...array);
+	var newArr = array.filter(num =>  num != maxNum);
+	newArr = newArr.filter(num =>  num != minNum);
+	return newArr.reduce((a,b) => a+b,0)
 };
 
 module.exports = sumWithoutHighestAndLowest;
